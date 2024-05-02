@@ -23,105 +23,140 @@
         </div>
 
         <!-- Right area -->
-        <!-- Right top area begin -->
         <div class="right-side">
-        <div class="top-area">
-            <img src="{% static  'assets/edit-icon.svg' %}" alt="">
-            <p id="picha-title">{{picha.name}}</p>
-        </div>
-        <!-- Right top area end -->
 
-        <!-- Middle Area Begin -->
-        <div class="middle-area">
-                <div class="middle-left-area">
-                    <div class="collections-area" id="area">
-                        <div class="collections-title title-area">
-                            <img src="{% static  'assets/collections-icon.svg' %}" alt="">
-                            <p id="collection-title" class="title">Collections ({{picha.collection.all|length}})</p>
+            <!-- Right top area begin -->
+            <div class="top-area">
+                <img src="{% static  'assets/edit-icon.svg' %}" alt="">
+                <p id="picha-title">{{picha.name}}</p>
+            </div>
+            <!-- Right top area end -->
+
+            <!-- Middle Area Begin -->
+            <div class="middle-area">
+                <!-- Middle left area begin -->
+                    <div class="middle-left-area">
+                        <div class="collections-area" id="area">
+                            <div class="collections-title title-area">
+                                <img src="{% static  'assets/collections-icon.svg' %}" alt="">
+                                <p id="collection-title" class="title">Collections ({{picha.collection.all|length}})</p>
+                            </div>
+                            <input type="text" placeholder="Search Collections ...">
+                            <div class="list-of-pills">
+                                <p>funeral flowers</p>
+                                <p>hand bouquets</p>    
+                                <p>wreaths</p>    
+                                <p>lettered</p>    
+                                <p>white</p>    
+                            </div>
                         </div>
-                        <input type="text" placeholder="Search Collections ...">
-                        <div class="grouped-pills">
-                            <p class="single-pill">Round Wreaths</p>
-                            <p class="single-pill">Round Wreaths</p>
-                            <p class="single-pill">Round Wreaths</p>
-                            <p class="single-pill">Round Wreaths</p>
+
+                        <div class="tags-area" id="area">
+                            <div class="tags-title title-area">
+                                <img src="{% static  'assets/tags-icon.svg' %}" alt="">
+                                <p id="tag-title" class="title">Tags ({{picha.tag.all|length}})</p>
+                            </div>
+                            <input type="text" placeholder="Search Tags ...">
+                            <div class="list-of-pills">
+                                <p>funeral flowers</p>
+                                <p>hand bouquets</p>    
+                                <p>wreaths</p>    
+                                <p>lettered</p>    
+                                <p>white</p>    
+                            </div>      
                         </div>
+
+                        <div class="website-details-area" id="area">
+                            <div class="website-details-title title-area">
+                                <img src="{% static  'assets/website-icon.svg' %}" alt="">
+                                <p id="website-detail-title" class="title">Website Details</p>
+                            </div>
+                            <input type="url" placeholder="Update URL ...">
+                            <div class="site-stuff">
+                                <a href="https://simonaflowers.com/product/mothers-mug" id="website-details-link" class="d-inline-block text-truncate">https://simonaflowers.com/product/mothers-mug</a>
+                                <img src="{% static 'assets/external-website-link-icon.svg' %}" alt="">
+                            </div>
+                        </div>
+
                     </div>
+                <!-- Middle left area end -->
+                
+                <!-- Middle right area begin -->
+                    <div class="middle-right-area">
+                        <div class="flower-types-area" id="area">
+                            <div class="flower-types-title title-area">
+                                <img src="{% static  'assets/flower-types-icon.svg' %}" alt="">
+                                <p id="flower-type-title" class="title">Flower Type ({{picha.flower_type.all|length}})</p>
+                            </div>
+                            <input type="text" placeholder="Search flower type ...">
+                            <div class="list-of-pills">
+                                <p>funeral flowers</p>
+                                <p>hand bouquets</p>    
+                                <p>wreaths</p>    
+                                <p>lettered</p>    
+                                <p>white</p>    
+                            </div>      
+                        </div>
 
-                    <div class="tags-area" id="area">
-                        <div class="tags-title title-area">
-                            <img src="{% static  'assets/tags-icon.svg' %}" alt="">
-                            <p id="tag-title" class="title">Tags ({{picha.tag.all|length}})</p>
+                        <div class="colors-area" id="area">
+                            <div class="colors-title title-area">
+                                <img src="{% static  'assets/collections-icon.svg' %}" alt="">
+                                <p id="color-title" class="title">Colors ({{picha.color.all|length}})</p>
+                            </div>
+                            <input type="text"  placeholder="Search colors ...">
+                            <div class="list-of-pills">
+                                <p>funeral flowers</p>
+                                <p>hand bouquets</p>    
+                                <p>wreaths</p>    
+                                <p>lettered</p>    
+                                <p>white</p>    
+                            </div>      
                         </div>
-                        <input type="text" placeholder="Search Tags ...">
-                        <div class="grouped-pills">
-                            <p class="single-pill">Round Wreaths</p>
-                            <p class="single-pill">Round Wreaths</p>
-                            <p class="single-pill">Round Wreaths</p>
-                            <p class="single-pill">Round Wreaths</p>
+
+                        <div class="occassions-area" id="area">
+                            <div class="occassions-title title-area">
+                                <img src="{% static  'assets/occasions-icon.svg' %}" alt="">
+                                <p id="occassion-title" class="title">Occassions ({{picha.collection.all|length}})</p>
+                            </div>
+                            <input type="text" placeholder="Search occasions ...">
+                            <div class="list-of-pills">
+                                <p>funeral flowers</p>
+                                <p>hand bouquets</p>    
+                                <p>wreaths</p>    
+                                <p>lettered</p>    
+                                <p>white</p>    
+                            </div>
                         </div>
+                
                     </div>
+                <!-- Middle right area end -->
+            </div>
+            <!-- Middle Area End -->
 
-                    <div class="website-details-area" id="area">
-                        <div class="website-details-title title-area">
-                            <img src="{% static  'assets/website-icon.svg' %}" alt="">
-                            <p id="website-detail-title" class="title">Website Details</p>
+            <!-- Bottom Area Begin -->
+            <div class="bottom-area">
+                <div class="extra-images-area" id="area">
+                    <div class="extra-images-title title-area">
+                        <div id="top">
+                            <img src="{% static  'assets/extra-images-icon.svg' %}" alt="">
+                            <p id="extra-images-title" class="title">Extra images ({{picha.collection.all|length}})</p>
                         </div>
-                        <input type="url" placeholder="Update URL ...">
-                        <a href="https://simonaflowers.com/product/mothers-mug" id="link-area" class="d-inline-block text-truncate">https://simonaflowers.com/product/mothers-mug</a>
+                        <input type="text" placeholder="Upload Extra Images +">
                     </div>
-
+                    <div class="list-of-pills" id="extra-images-pills">
+                        <p>funeral flowers</p>
+                        <p>hand bouquets</p>
+                        <p>wreaths</p>    
+                        <p>lettered</p>    
+                        <p>white</p>    
+                    </div>
                 </div>
-                <div class="middle-right-area">
-                    <div class="collections-area" id="area">
-                        <div class="collections-title title-area">
-                            <img src="{% static  'assets/collections-icon.svg' %}" alt="">
-                            <p id="collection-title" class="title">Collections ({{picha.collection.all|length}})</p>
-                        </div>
-                        <input type="text">
-                        <div class="grouped-pills">
-                            <p class="single-pill">Round Wreaths</p>
-                            <p class="single-pill">Round Wreaths</p>
-                            <p class="single-pill">Round Wreaths</p>
-                            <p class="single-pill">Round Wreaths</p>
-                        </div>
-                    </div>
+            </div>
+            <!-- Bottom Area End -->
 
-                    <div class="collections-area" id="area">
-                        <div class="collections-title title-area">
-                            <img src="{% static  'assets/collections-icon.svg' %}" alt="">
-                            <p id="collection-title" class="title">Collections ({{picha.collection.all|length}})</p>
-                        </div>
-                        <input type="text">
-                        <div class="grouped-pills">
-                            <p class="single-pill">Round Wreaths</p>
-                            <p class="single-pill">Round Wreaths</p>
-                            <p class="single-pill">Round Wreaths</p>
-                            <p class="single-pill">Round Wreaths</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <!-- Middle Area End -->
-
-        <!-- Bottom Area Begin -->
-        <div class="bottom-area" id="area">
-            <div class="collections-title title-area">
-                <img src="{% static  'assets/collections-icon.svg' %}" alt="">
-                <p id="collection-title" class="title">Collections ({{picha.collection.all|length}})</p>
-            </div>
-            <input type="text">
-            <div class="grouped-pills">
-                <p class="single-pill">Round Wreaths</p>
-                <p class="single-pill">Round Wreaths</p>
-                <p class="single-pill">Round Wreaths</p>
-                <p class="single-pill">Round Wreaths</p>
-            </div>
-        </div>
-        <!-- Bottom Area End -->
         </div>
     </div>
+</div>
 
 
 {% endblock %}
