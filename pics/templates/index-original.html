@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %} Homepage {% endblock title %}
+
+{% block content %}
+<body>
+    <div class="jamani" style="padding: 20px;">
+
+        <h1>All Images</h1>
+        <h2>Image Count:{{all_images|length}}</h2>
+        <div class="all-images" style="display: flex; justify-content: space-between; align-items: left;">
+        {% for image in all_images %}
+        <div class="product" style=" background-color:pink; width: 30%; padding:1px 10px; border-radius: 10px; margin-bottom:50px; ">
+            <h3> <a href="{% url 'picha' image.id %}">{{image.name}}</a></h3>
+            <img src="{{image.image.url}}" alt="" style="max-height: 100px;">
+            <p>Tags:</p>
+            <div id="tags" style="display: flex;">
+                {% for tag in image.tag.all %}
+                <li style="list-style: none; padding:3px 10px; margin-right: 10px; color: white; background-color: gray;border-radius: 5px;">{{tag.name}}</li>
+                {% endfor %}
+            </div>
+            <p>Added to website: {% if image.shopify_url %} Yes {% else %} Not Yet {% endif %}</p>
+            {% if image.shopify_url %}
+            <p>Shopify Url: <a href="{{image.shopify_url}}">{{image.name}}</a></p>
+            {% endif %}
+        </div>
+            {% endfor %}
+        </div>
+    </div>
+</body>
+    
+{% endblock content %}

@@ -1,32 +1,135 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Homepage</title>
-</head>
-<body style="@import url('https://fonts.googleapis.com/css2?family=Fira+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
-               font-family: Fira Sans, sans-serif; ">
-    <h1>All Images</h1>
-    <h2>Image Count:{{all_images|length}}</h2>
-    {% for image in all_images %}
-    <div class="product" 
-    style=" 
-            background-color:pink; width: 30%; padding:1px 10px; border-radius: 10px;margin-bottom:50px; ">
-        <h3>{{image.name}}</h3>
-        <img src="{{image.image.url}}" alt="" style="max-height: 100px;">
-        <p>Tags:</p>
-        <div id="tags" style="display: flex;">
-            {% for tag in image.tag.all %}
-            <li style="list-style: none; padding:3px 10px; margin-right: 10px; color: white; background-color: gray;border-radius: 5px;">{{tag.name}}</li>
-            {% endfor %}
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %} Homepage {% endblock title %}
+
+{% block content %}
+<body>
+    <div class="jamani">
+
+        <p>Filter images</p>
+        <p>Image Count: {{all_images|length}}</p>
+        <div class="filter-section">
+            <div class="filter-icons">
+                <img src="{% static 'assets/filter-jug.svg' %}" alt="">
+                <img src="{% static 'assets/filter-settings.svg' %}" alt="">
+            </div>
+            <div class="dropdown">
+                <a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="Collections-Dropdown" data-bs-toggle="dropdown" aria-expanded="false">
+                  Collections
+                </a>
+              
+                <ul class="dropdown-menu" aria-labelledby="Collections-Dropdown">
+                  <li><a class="dropdown-item" href="#">Action</a></li>
+                  <li><a class="dropdown-item" href="#">Another action</a></li>
+                  <li><a class="dropdown-item" href="#">Something else here</a></li>
+                </ul>
+            </div>
+
+            <div class="dropdown">
+                <a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="Tags-Dropdown" data-bs-toggle="dropdown" aria-expanded="false">
+                  Tags
+                </a>
+              
+                <ul class="dropdown-menu" aria-labelledby="Tags-Dropdown">
+                  <li><a class="dropdown-item" href="#">Action</a></li>
+                  <li><a class="dropdown-item" href="#">Another action</a></li>
+                  <li><a class="dropdown-item" href="#">Something else here</a></li>
+                </ul>
+            </div>
+
+            <div class="dropdown">
+                <a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="Bouquet-type-Dropdown" data-bs-toggle="dropdown" aria-expanded="false">
+                  Bouquet Type
+                </a>
+              
+                <ul class="dropdown-menu" aria-labelledby="Bouquet-type-Dropdown">
+                  <li><a class="dropdown-item" href="#">Action</a></li>
+                  <li><a class="dropdown-item" href="#">Another action</a></li>
+                  <li><a class="dropdown-item" href="#">Something else here</a></li>
+                </ul>
+            </div>
+
+            <div class="dropdown">
+                <a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="Colors-Dropdown" data-bs-toggle="dropdown" aria-expanded="false">
+                  Colors
+                </a>
+              
+                <ul class="dropdown-menu" aria-labelledby="Colors-Dropdown">
+                  <li><a class="dropdown-item" href="#">Action</a></li>
+                  <li><a class="dropdown-item" href="#">Another action</a></li>
+                  <li><a class="dropdown-item" href="#">Something else here</a></li>
+                </ul>
+            </div>
         </div>
-        <p>Added to website: {% if image.added_to_website %} Yes {% else %} Not Yet {% endif %}</p>
-        {% if image.added_to_website %}
-        <p>Shopify Url: <a href="{{image.shopify_url}}">{{image.shopify_url}}</a></p>
-        {% endif %}
+
+        <br><br>
+        
+        <div class="all-images" style="display: flex; justify-content: space-between; align-items: left;">
+        <div class="row row-cols-2 row-cols-md-2 row-cols-lg-3 g-3">
+            {% for image in all_images %}
+            <div class="col">
+              <div class="card">
+                <img src="{{image.image.url}}" class="card-img-top" alt="..." style="max-height: 150px; object-fit: cover;">
+                <div class="card-body">
+                  <h5 class="card-title"><a href="{% url 'picha' image.id %}">{{image.name}}</a></h5>
+                </div>
+              </div>
+            </div>
+              {% endfor %}
+        </div>
+
+        <div class="selected-image">
+            <div class="row row-cols-1 row-cols-md-1 row-cols-lg-1">
+                <div class="col">
+                  <div class="card">
+                    <div class="card-header">Selected Image Preview</div>
+                    <img src="{% static 'assets/Assorted.png' %}" class="card-img-top" alt="..." style="max-height: 150px; object-fit: cover;">
+                    <h5 class="card-title">{{image.name}}</h5>
+                    <div class="card-body">
+                        <h6><img src="{% static 'assets/collections-icon.svg' %}" alt=""> Collections</h6>
+                        <div class="list-of-pills">
+                            <p>funeral flowers</p>
+                            <p>hand bouquets</p>    
+                            <p>wreaths</p>    
+                            <p>lettered</p>    
+                            <p>white</p>    
+                        </div>
+                        <br>
+                        <h6><img src="{% static 'assets/tags-icon.svg' %}" alt=""> Tags</h6>
+                        <div class="list-of-pills">
+                            <p>funeral flowers</p>
+                            <p>hand bouquets</p>    
+                            <p>wreaths</p>    
+                            <p>lettered</p>    
+                            <p>white</p>    
+                        </div>
+                        <br>
+                        <h6><img src="{% static 'assets/flower-types-icon.svg' %}" alt=""> Flower types</h6>
+                        <div class="list-of-pills">
+                            <p>funeral flowers</p>
+                            <p>hand bouquets</p>    
+                            <p>wreaths</p>    
+                            <p>lettered</p>    
+                            <p>white</p>    
+                        </div>      
+                        <br>
+                        <h6><img src="{% static 'assets/website-icon.svg' %}" alt=""> Website Details</h6>
+                            <p><strong>Added to website?: </strong>Yes</p>
+                            <div class="site-stuff">
+                                <a href="https://simonaflowers.com/product/mothers-mug" id="website-details-link" class="d-inline-block text-truncate">https://simonaflowers.com/product/mothers-mug</a>
+                                <img src="{% static 'assets/external-website-link-icon.svg' %}" alt="">
+                            </div>
+                    </div>
+                  </div>
+
+                </div>
+            </div>
+        </div>
     </div>
-        {% endfor %}
-    
+</div>
 </body>
-</html>
+    
+{% endblock content %}
+
+

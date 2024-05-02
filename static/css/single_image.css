@@ -1,0 +1,134 @@
+.single-container{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 100px;
+}
+
+.single-container p{
+    margin: 0;
+}
+
+.single-container .title-area{
+    display: flex;
+    flex-direction: row;
+    gap: 8px;
+}
+
+.single-container .title-area img{
+    width: 23px;
+}
+
+
+.single-container .title{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 10px;
+    font-size: 18px;
+    font-weight: 500;
+}
+
+.single-container input{
+    background-color: #ECF7CB;
+    color: #000000;
+    border: 1px solid #ECF7CB;
+    border-radius: 8px;
+    padding: 5px 8px;
+    width: 300px;
+}
+
+.single-container input::placeholder{
+    color: #000000;
+}
+
+.single-container .left-side{
+    width: 50%;
+    height: 100vh;
+    display: flex;
+    gap: 20px;
+    flex-direction: row-reverse;
+    justify-content: center;
+    align-items: center;
+}
+
+.single-container .left-side #main-image{
+    max-width: 30rem;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+.single-container .left-side .small-images{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    gap: 35px;
+}
+
+.single-container .left-side .sub-images{
+    max-width: 8rem;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+/* Right side Styles */
+.single-container .right-side{
+    width: 50%;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: left;
+}
+
+.single-container .right-side .top-area{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 10px;
+}
+
+.right-side .top-area img{
+    width: 25px;
+    cursor: pointer;
+}
+
+.right-side .top-area #picha-title{
+    font-size: 30px;
+    font-weight: 500;
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+.right-side .middle-area{
+    display: flex;
+    flex-direction: row;
+    gap: 30px;
+}
+
+
+.right-side .middle-area .middle-left-area{
+    display: flex;
+    flex-direction: column;
+}
+
+
+.right-side .middle-area #area{
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.right-side .middle-area #link-area{
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    background-color: #26643F;
+    color: #FFFFFF;
+    border-radius: 8px;
+}
+
+
+
+

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Homepage</title>
+</head>
+<body style="@import url('https://fonts.googleapis.com/css2?family=Fira+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+               font-family: Fira Sans, sans-serif; ">
+    <h1>All Imagess</h1>
+    <h2>Image Count:{{all_images|length}}</h2>
+    {% for image in all_images %}
+    <div class="product" 
+    style=" 
+            background-color:pink; width: 30%; padding:1px 10px; border-radius: 10px;margin-bottom:50px; ">
+        <h3>{{image.name}}</h3>
+        <img src="{{image.image.url}}" alt="" style="max-height: 100px;">
+        <p>Tags:</p>
+        <div id="tags" style="display: flex;">
+            {% for tag in image.tag.all %}
+            <li style="list-style: none; padding:3px 10px; margin-right: 10px; color: white; background-color: gray;border-radius: 5px;">{{tag.name}}</li>
+            {% endfor %}
+        </div>
+        <p>Added to website: {% if image.added_to_website %} Yes {% else %} Not Yet {% endif %}</p>
+        {% if image.added_to_website %}
+        <p>Shopify Url: <a href="{{image.shopify_url}}">{{image.name}}</a></p>
+        {% endif %}
+    </div>
+        {% endfor %}
+    
+</body>
+</html>

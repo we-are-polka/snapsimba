@@ -1,0 +1,50 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block head_content %}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/x-icon" href="{% static 'assets/favicon.ico' %}" />
+    <link rel="stylesheet" href="{% static  'css/styles.css' %}">
+    <link rel="stylesheet" href="{% static  'css/single_image.css' %}">
+    <title>Single Image</title>
+{% endblock %}
+
+{% block content %}
+
+    <div class="single-container">
+        <div class="left-side">
+            <img src="{{picha.image.url}}" alt="" id="main-image">
+            <div class="small-images">
+                <img src="{{picha.image.url}}" alt="" class="sub-images">
+                <img src="{{picha.image.url}}" alt="" class="sub-images">
+                <img src="{{picha.image.url}}" alt="" class="sub-images">
+            </div>
+        </div>
+        <div class="right-side">
+        <p id="image-title"> {{picha.name}}</p>
+        <p class="collection-titles">Tags</p>
+        <div class="tag-pills">
+            {% for tag in picha.tag.all %}
+            <p id="tag-pill">{{tag.name}}</p>
+            {% endfor %}
+        </div>
+        <h4>Collections</h4>
+        <ul class="tag-pills">
+            {% for coll in picha.collection.all %}
+            <li class="tag-pill">{{coll.name}}</li>
+            {% endfor %}
+        </ul>
+        <h4>Flower Type</h4>
+        <ul class="tag-pills">
+            {% for ftype in picha.flower_type.all %}
+            <li class="tag-pill">{{ftype.name}}</li>
+            {% endfor %}
+        </ul>
+        <p><strong>Added to website: </strong> {% if image.shopify_url %} Yes {% else %} Not Yet {% endif %}</p>
+        <p>{{picha.shopify_url}}</p>
+
+        </div>
+    </div>
+
+{% endblock %}

@@ -1,0 +1,28 @@
+{% load static %}
+
+{% block content %}
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="/">
+      <img src="{% static 'assets/snap-logo.png' %}" alt="" width="30px" class="d-inline-block align-text-center">
+      snapsimba
+    </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <form class="d-flex">
+      <img src="{% static 'assets/search-icon.svg' %}" alt="">
+      <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+      <a href="" class="upload-nav">Upload
+        <img src="{% static 'assets/white-plus.svg' %}" alt="">
+      </a>
+    </form>
+    <div class="profile-area">
+      <img src="{% static 'assets/gear-icon.svg' %}" alt="" class="gear-icon">
+      <img src="{% static 'assets/options-icon.svg' %}" alt="" class="options-icon">
+      <img src="{% static 'assets/profile-pic.jpg' %}" alt="" class="profile-pic">
+    </div>
+
+  </div>
+</nav>
+{% endblock content %}

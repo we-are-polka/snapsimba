@@ -1,0 +1,56 @@
+nav{
+    background: #F8FAFD;
+}
+
+.navbar-brand{
+    font-style: 500;
+}
+
+nav .form-control{
+    background-color: #cef05393;
+    color: #131314;
+    border-radius: 40px;
+    padding: 10px 10px 10px 40px;
+    width: 500px;
+    margin-left: -30px;
+}
+
+nav form img{
+    width: 17px;
+    z-index: 2;
+}
+
+nav .upload-nav{
+    padding: 10px 15px;
+    background-color: #26643F;
+    font-weight: 500;
+    text-decoration: none;
+    color: #FFFFFF;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+
+nav .upload-nav img{
+    width: 15px;
+}
+
+nav .profile-area{
+    display: flex;
+    gap: 20px;
+}
+
+nav .gear-icon{
+    width: 30px;
+}
+
+nav .options-icon{
+    width: 25px;
+}
+
+nav .profile-pic{
+    width: 40px;
+    border-radius: 50px;
+}

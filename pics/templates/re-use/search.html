@@ -1,0 +1,45 @@
+{% extends '../base.html' %}
+
+{% block title %} Main {% endblock title %}
+
+{% block content %} 
+<div style="margin-left:200px; margin-top: 50px;">
+    
+    <h1>Search Page</h1>
+    <div class="mb-12" style="width: 40%;">
+        <input id="search_here" class="form-control mb-3" placeholder="Type here to search..."/>
+    </div>
+
+    <div id="box">
+        {% for item in object_list %}
+        <p>{{item}}</p>
+        {% endfor %}
+    </div>
+
+    {% block scripts %}
+    <script>
+        const data = '{{ qs_json }}'
+        const rdata = JSON.parse(data.replace(/&quot;/g,'"'))
+        const input = document.getElementById('search_here')
+        let filteredArr = []
+
+        input.addEventListener('keyup', (e)=> {
+            const search_term = e.target.value.toLowerCase()
+            box.innerHTML = ""
+            filteredArr = rdata.filter(tag=> tag['name'].toLowerCase().includes(search_term))
+            console.log(filteredArr)
+            if (filteredArr.length > 0){
+                filteredArr.forEach(tag=>{
+                    box.innerHTML += `<b>${tag['name']}</b><br>`
+                })
+            } else{
+                box.innerHTML = `<b>No Results Found!</b>`
+            }
+        })
+    </script>
+</div>
+
+    {% endblock scripts %}
+
+{% endblock content %}
+

@@ -1,0 +1,127 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block head_content %}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/x-icon" href="{% static 'assets/favicon.ico' %}" />
+    <link rel="stylesheet" href="{% static  'css/styles.css' %}">
+    <link rel="stylesheet" href="{% static  'css/single_image.css' %}">
+    <title>Single Image</title>
+{% endblock %}
+
+{% block content %}
+
+    <div class="single-container">
+        <div class="left-side">
+            <img src="{{picha.image.url}}" alt="" id="main-image">
+            <div class="small-images">
+                <img src="{{picha.image.url}}" alt="" class="sub-images">
+                <img src="{{picha.image.url}}" alt="" class="sub-images">
+                <img src="{{picha.image.url}}" alt="" class="sub-images">
+            </div>
+        </div>
+
+        <!-- Right area -->
+        <!-- Right top area begin -->
+        <div class="right-side">
+        <div class="top-area">
+            <img src="{% static  'assets/edit-icon.svg' %}" alt="">
+            <p id="picha-title">{{picha.name}}</p>
+        </div>
+        <!-- Right top area end -->
+
+        <!-- Middle Area Begin -->
+        <div class="middle-area">
+                <div class="middle-left-area">
+                    <div class="collections-area" id="area">
+                        <div class="collections-title title-area">
+                            <img src="{% static  'assets/collections-icon.svg' %}" alt="">
+                            <p id="collection-title" class="title">Collections ({{picha.collection.all|length}})</p>
+                        </div>
+                        <input type="text" placeholder="Search Collections ...">
+                        <div class="grouped-pills">
+                            <p class="single-pill">Round Wreaths</p>
+                            <p class="single-pill">Round Wreaths</p>
+                            <p class="single-pill">Round Wreaths</p>
+                            <p class="single-pill">Round Wreaths</p>
+                        </div>
+                    </div>
+
+                    <div class="tags-area" id="area">
+                        <div class="tags-title title-area">
+                            <img src="{% static  'assets/tags-icon.svg' %}" alt="">
+                            <p id="tag-title" class="title">Tags ({{picha.tag.all|length}})</p>
+                        </div>
+                        <input type="text" placeholder="Search Tags ...">
+                        <div class="grouped-pills">
+                            <p class="single-pill">Round Wreaths</p>
+                            <p class="single-pill">Round Wreaths</p>
+                            <p class="single-pill">Round Wreaths</p>
+                            <p class="single-pill">Round Wreaths</p>
+                        </div>
+                    </div>
+
+                    <div class="website-details-area" id="area">
+                        <div class="website-details-title title-area">
+                            <img src="{% static  'assets/website-icon.svg' %}" alt="">
+                            <p id="website-detail-title" class="title">Website Details</p>
+                        </div>
+                        <input type="url" placeholder="Update URL ...">
+                        <a href="https://simonaflowers.com/product/mothers-mug" id="link-area" class="d-inline-block text-truncate">https://simonaflowers.com/product/mothers-mug</a>
+                    </div>
+
+                </div>
+                <div class="middle-right-area">
+                    <div class="collections-area" id="area">
+                        <div class="collections-title title-area">
+                            <img src="{% static  'assets/collections-icon.svg' %}" alt="">
+                            <p id="collection-title" class="title">Collections ({{picha.collection.all|length}})</p>
+                        </div>
+                        <input type="text">
+                        <div class="grouped-pills">
+                            <p class="single-pill">Round Wreaths</p>
+                            <p class="single-pill">Round Wreaths</p>
+                            <p class="single-pill">Round Wreaths</p>
+                            <p class="single-pill">Round Wreaths</p>
+                        </div>
+                    </div>
+
+                    <div class="collections-area" id="area">
+                        <div class="collections-title title-area">
+                            <img src="{% static  'assets/collections-icon.svg' %}" alt="">
+                            <p id="collection-title" class="title">Collections ({{picha.collection.all|length}})</p>
+                        </div>
+                        <input type="text">
+                        <div class="grouped-pills">
+                            <p class="single-pill">Round Wreaths</p>
+                            <p class="single-pill">Round Wreaths</p>
+                            <p class="single-pill">Round Wreaths</p>
+                            <p class="single-pill">Round Wreaths</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Middle Area End -->
+
+        <!-- Bottom Area Begin -->
+        <div class="bottom-area" id="area">
+            <div class="collections-title title-area">
+                <img src="{% static  'assets/collections-icon.svg' %}" alt="">
+                <p id="collection-title" class="title">Collections ({{picha.collection.all|length}})</p>
+            </div>
+            <input type="text">
+            <div class="grouped-pills">
+                <p class="single-pill">Round Wreaths</p>
+                <p class="single-pill">Round Wreaths</p>
+                <p class="single-pill">Round Wreaths</p>
+                <p class="single-pill">Round Wreaths</p>
+            </div>
+        </div>
+        <!-- Bottom Area End -->
+        </div>
+    </div>
+
+
+{% endblock %}

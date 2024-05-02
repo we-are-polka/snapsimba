@@ -1,0 +1,59 @@
+.jamani{
+    padding-left: 50px;
+}
+
+.filter-section{
+    display: flex;
+    gap: 15px;
+}
+
+.filter-icons{
+    background-color: #26643F;
+    padding: 5px 10px;
+    border-radius: 8px;
+}
+
+.filter-icons img{
+    max-width: 18px;
+}
+
+#Collections-Dropdown, #Tags-Dropdown, #Bouquet-type-Dropdown, #Colors-Dropdown{
+    background-color: #FFFFFF;
+    color: #000000;
+    border: 1px solid #000000;
+    font-weight: 500;
+}
+
+.list-of-pills{
+    display: flex;
+    flex-wrap: wrap;
+    width: 300px;
+}
+
+.list-of-pills p{
+    font-size: 12px;
+    background-color: #26643f;
+    color: #FFFFFF;
+    border-radius: 30px;
+    padding: 5px 10px;
+    text-transform: capitalize;
+    margin: 2px;
+}
+
+#website-details-link{
+    padding: 5px 10px;
+    background-color: #26643F;
+    color: #FFFFFF;
+    max-width: 250px;
+    font-size: 15px;
+    border-radius: 8px;
+}
+
+.site-stuff{
+    display: flex;
+    gap: 5px;
+}
+
+.site-stuff img{
+    width: 30px;
+}
